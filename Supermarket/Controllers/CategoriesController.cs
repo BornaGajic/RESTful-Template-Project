@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Supermarket.API.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("api/[controller]")]
     public class CategoriesController : ApiController
     {
         private readonly ICategoryService _categoryService;

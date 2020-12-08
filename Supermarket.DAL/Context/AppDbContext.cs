@@ -34,8 +34,6 @@ namespace Supermarket.DAL.Context
 			modelBuilder.Entity<Product>().Property(prop => prop.Name).IsRequired().HasMaxLength(50);
 			modelBuilder.Entity<Product>().Property(prop => prop.QuantityInPackage).IsRequired();
 			modelBuilder.Entity<Product>().Property(prop => prop.UnitOfMeasurement).IsRequired();
-
-
 		}
 	}
 }

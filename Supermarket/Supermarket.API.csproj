@@ -45,10 +45,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.6.1.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=6.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.WebApi2.6.0.1\lib\net472\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -154,9 +182,25 @@
       <Project>{417b8ed6-944d-43ac-a79a-08298b10ac07}</Project>
       <Name>Supermarket.API.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Supermarket.API.Repository.Common\Supermarket.API.Repository.Common.csproj">
+      <Project>{712d6e14-8c53-4db6-9c6d-f4ed21668a07}</Project>
+      <Name>Supermarket.API.Repository.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Supermarket.API.Repository\Supermarket.API.Repository.csproj">
+      <Project>{042b1d36-38d9-43db-b6eb-de89be784421}</Project>
+      <Name>Supermarket.API.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Supermarket.API.Service.Common\Supermarket.API.Service.Common.csproj">
       <Project>{bd2a0edb-8578-4305-b305-ee31880ea7be}</Project>
       <Name>Supermarket.API.Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Supermarket.API.Service\Supermarket.API.Service.csproj">
+      <Project>{f5efbd28-2448-479d-829e-e5a8db1c85e9}</Project>
+      <Name>Supermarket.API.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Supermarket.DAL\Supermarket.DAL.csproj">
+      <Project>{9ffba77e-cdd6-41df-94d0-b6435ab5ae32}</Project>
+      <Name>Supermarket.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
