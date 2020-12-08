@@ -22,7 +22,7 @@ namespace Supermarket.DAL.Context
 		{
 			base.OnModelCreating(modelBuilder);
 
-			modelBuilder.Entity<Category>().ToTable("Categores");
+			modelBuilder.Entity<Category>().ToTable("Categories");
 			modelBuilder.Entity<Category>().HasKey(c => c.Id);
 			modelBuilder.Entity<Category>().Property(prop => prop.Id).IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Computed);
 			modelBuilder.Entity<Category>().Property(prop => prop.Name).IsRequired().HasMaxLength(30);

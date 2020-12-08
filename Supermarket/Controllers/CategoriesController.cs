@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace Supermarket.API.Controllers
 {
-    [Route("api/[controller]")]
     public class CategoriesController : ApiController
     {
         private readonly ICategoryService _categoryService;
@@ -21,6 +20,7 @@ namespace Supermarket.API.Controllers
         }
 
         [HttpGet]
+        [Route("api/CategoriesController/all")]
         public async Task<IEnumerable<Category>> GetAllAsync ()
         {
             var categories = await _categoryService.ListAsync();
