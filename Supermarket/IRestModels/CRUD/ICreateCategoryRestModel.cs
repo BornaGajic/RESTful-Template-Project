@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Supermarket.API.IRestModels
+namespace Supermarket.API.IRestModels.CRUD
 {
-	public interface ICategoryRestModel
+	public interface ICreateCategoryRestModel
 	{
-		Guid Id { get; set; }
 		string Name { get; set; }
 	}
 }

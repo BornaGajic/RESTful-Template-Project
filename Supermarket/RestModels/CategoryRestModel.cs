@@ -8,7 +8,7 @@ namespace Supermarket.API.RestModels
 {
 	public class CategoryRestModel : ICategoryRestModel
 	{
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		public string Name { get; set; }
 	}
 }

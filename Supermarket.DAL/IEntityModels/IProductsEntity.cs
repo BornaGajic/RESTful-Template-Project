@@ -11,12 +11,12 @@ namespace Supermarket.DAL.IEntityModels
 {
 	public interface IProductsEntity
 	{
-		int Id { get; set; }
+		Guid Id { get; set; }
 		string Name { get; set; }
 		short QuantityInPackage { get; set; }
 		EUnitOfMeasurement UnitOfMeasurement { get; set; }
 
-		int CategoryId { get; set; }
+		Guid CategoryId { get; set; }
 		CategoryEntity CategoryEntity { get; set; }
 	}
 }

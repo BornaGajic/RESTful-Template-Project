@@ -25,7 +25,7 @@ namespace Supermarket.API.Repository
 
 		public virtual Task<int> AddAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
 		{
-			DbContext.Entry(entity).State = EntityState.Added;
+			DbContext.Set<TEntity>().Add(entity);
 			
 			return Task.FromResult(1);
 		}
@@ -39,14 +39,21 @@ namespace Supermarket.API.Repository
 
 		public virtual Task<int> DeleteAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
 		{
-			DbContext.Entry(entity).State = EntityState.Deleted;
+			DbContext.Set<TEntity>().Remove(entity);
 
 			return Task.FromResult(1);
 		}
 
-		public Task<int> CommitAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
+		public Task<int> CommitAsync<TEntity> ()
 		{
 			return DbContext.SaveChangesAsync();
+		}
+
+		public Task<int> RollbackAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
+		{
+			DbContext.Entry(entity).State = EntityState.Unchanged;
+
+			return Task.FromResult(1);
 		}
 
 		public void Dispose ()

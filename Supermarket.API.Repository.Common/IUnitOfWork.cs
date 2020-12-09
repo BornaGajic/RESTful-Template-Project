@@ -15,6 +15,7 @@ namespace Supermarket.API.Repository.Common
 		Task<int> AddAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
 		Task<int> UpdateAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
 		Task<int> DeleteAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
-		Task<int> CommitAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
+		Task<int> CommitAsync<TEntity> ();
+		Task<int> RollbackAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
 	}
 }

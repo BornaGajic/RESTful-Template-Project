@@ -1,13 +1,20 @@
-﻿using System.Reflection;
+﻿using System.Data.Entity.Migrations;
+using System.Reflection;
 using System.Web;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using AutoMapper;
+using Supermarket.API.IRestModels;
+using Supermarket.API.IRestModels.CRUD;
+using Supermarket.API.Model.CategoryDomainModels;
+using Supermarket.API.Model.CategoryDomainModels.CRUD;
 using Supermarket.API.Model.Common.ICategoryDomainModel;
+using Supermarket.API.Model.Common.ICategoryDomainModel.CRUD;
 using Supermarket.API.Repository;
 using Supermarket.API.Repository.Common;
 using Supermarket.API.RestModels;
+using Supermarket.API.RestModels.CRUD;
 using Supermarket.API.Service;
 using Supermarket.DAL.Context;
 using Supermarket.DAL.EntityModels;
@@ -33,9 +40,19 @@ namespace Supermarket.API
 			builder.RegisterModule(new RepositoryDIModule());
 
 			builder.Register(context => new MapperConfiguration(cfg => {
-				cfg.CreateMap<ICategory, CategoryRestModel>();
-				cfg.CreateMap<ICategory, CategoryEntity>();
+				cfg.CreateMap<Category, ICategory>();
+				cfg.CreateMap<CategoryRestModel, ICategoryRestModel>();
 				cfg.CreateMap<CategoryEntity, ICategory>();
+				cfg.CreateMap<ICategory, CategoryRestModel>();
+
+				cfg.CreateMap<ICreateCategory, CreateCategory>();
+				cfg.CreateMap<ICreateCategory, CategoryEntity>();
+				cfg.CreateMap<ICreateCategoryRestModel, CreateCategoryRestModel>();
+				cfg.CreateMap<ICreateCategoryRestModel, ICreateCategory>();
+				cfg.CreateMap<CreateCategoryRestModel, CreateCategory>();
+				cfg.CreateMap<CreateCategory, CategoryEntity>();
+
+				//cfg.CreateMap<CategoryEntity, ICategory>();
 			})).AsSelf().SingleInstance();
 
 			builder.Register(c =>

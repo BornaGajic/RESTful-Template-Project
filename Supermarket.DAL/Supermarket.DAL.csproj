@@ -95,6 +95,11 @@
     <Compile Include="IBaseEntity.cs" />
     <Compile Include="IEntityModels\ICategoryEntity.cs" />
     <Compile Include="IEntityModels\IProductsEntity.cs" />
+    <Compile Include="Migrations\202012081927325_InitialCreate.cs" />
+    <Compile Include="Migrations\202012081927325_InitialCreate.designer.cs">
+      <DependentUpon>202012081927325_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,7 +116,11 @@
       <Name>Supermarket.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012081927325_InitialCreate.resx">
+      <DependentUpon>202012081927325_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

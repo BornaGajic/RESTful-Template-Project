@@ -9,7 +9,7 @@ namespace Supermarket.API.Model.Common.IProductDomainModel
 {
 	public interface IProduct
 	{
-		int Id { get; set; }
+		Guid Id { get; set; }
 		string Name { get; set; }
 		short QuantityInPackage { get; set; }
 		EUnitOfMeasurement UnitOfMeasurement { get; set; }

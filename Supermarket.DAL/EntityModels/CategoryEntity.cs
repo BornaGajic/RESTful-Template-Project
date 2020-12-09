@@ -10,6 +10,6 @@ namespace Supermarket.DAL.EntityModels
 	public class CategoryEntity : BaseEntity, ICategoryEntity
 	{
 		public string Name { get; set; }
-		public IList<ProductEntity> Products { get; set; } = new List<ProductEntity>();
+		public IList<ProductEntity> Products { get; set; }
 	}
 }

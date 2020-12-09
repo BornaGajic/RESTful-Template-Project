@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDomainModels\Category.cs" />
+    <Compile Include="CategoryDomainModels\CRUD\CreateCategory.cs" />
     <Compile Include="ProductDomainModels\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +96,9 @@
       <Project>{fe652ea2-dab2-4a77-a3f0-a58a0feec542}</Project>
       <Name>Supermarket.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProductDomainModels\CRUD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

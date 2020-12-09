@@ -8,6 +8,6 @@ namespace Supermarket.DAL
 {
 	public interface IBaseEntity
 	{
-		int Id { get; set; }
+		Guid Id { get; set; }
 	}
 }

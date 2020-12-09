@@ -14,7 +14,7 @@ namespace Supermarket.DAL.EntityModels
 		public short QuantityInPackage { get; set; }
 		public EUnitOfMeasurement UnitOfMeasurement { get; set; }
 
-		public int CategoryId { get; set; }
+		public Guid CategoryId { get; set; }
 		public CategoryEntity CategoryEntity { get; set; }
 	}
 }

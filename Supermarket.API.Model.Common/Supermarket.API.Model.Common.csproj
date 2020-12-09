@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICategoryDomainModel\CRUD\ICreateCategory.cs" />
     <Compile Include="ICategoryDomainModel\ICategory.cs" />
     <Compile Include="IProductDomainModel\IProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -52,7 +53,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ICategoryDomainModel\CRUD\" />
     <Folder Include="IProductDomainModel\CRUD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
