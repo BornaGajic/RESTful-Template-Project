@@ -88,7 +88,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
     <Compile Include="Context\AppDbContext.cs" />
+    <Compile Include="EntityModels\CategoryEntity.cs" />
+    <Compile Include="EntityModels\ProductEntity.cs" />
+    <Compile Include="IBaseEntity.cs" />
+    <Compile Include="IEntityModels\ICategoryEntity.cs" />
+    <Compile Include="IEntityModels\IProductsEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +106,12 @@
       <Project>{417b8ed6-944d-43ac-a79a-08298b10ac07}</Project>
       <Name>Supermarket.API.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Supermarket.Common\Supermarket.Common.csproj">
+      <Project>{fe652ea2-dab2-4a77-a3f0-a58a0feec542}</Project>
+      <Name>Supermarket.Common</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

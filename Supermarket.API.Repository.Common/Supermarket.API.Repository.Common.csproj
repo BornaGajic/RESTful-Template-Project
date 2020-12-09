@@ -78,18 +78,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICategoryRepository.cs" />
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Repositories\ICategoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Supermarket.API.Model\Supermarket.API.Model.csproj">
-      <Project>{417b8ed6-944d-43ac-a79a-08298b10ac07}</Project>
-      <Name>Supermarket.API.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Supermarket.DAL\Supermarket.DAL.csproj">
+      <Project>{9ffba77e-cdd6-41df-94d0-b6435ab5ae32}</Project>
+      <Name>Supermarket.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

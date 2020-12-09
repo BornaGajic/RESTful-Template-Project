@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Supermarket.API.Model
+namespace Supermarket.Common
 {
 	public enum EUnitOfMeasurement : byte
 	{

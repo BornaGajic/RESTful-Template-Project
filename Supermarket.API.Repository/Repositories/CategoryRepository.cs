@@ -4,22 +4,22 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Supermarket.API.Model;
-using Supermarket.API.Repository.Common;
+using Supermarket.API.Repository.Common.Repositories;
 using Supermarket.DAL.Context;
+using Supermarket.DAL.EntityModels;
 
 namespace Supermarket.API.Repository.Repositories
 {
-    public class CategoryRepository : BaseRepository, ICategoryRepository
+	public class CategoryRepository : BaseRepository<CategoryEntity>, ICategoryRepository
     {
         public CategoryRepository (AppDbContext context) : base(context)
         {
             
         }
 
-        public async Task<IEnumerable<Category>> ListAsync ()
+        public async Task<IEnumerable<CategoryEntity>> ListAsync ()
         {
-            return await _context.Categories.ToListAsync();
+            return await Entities.ToListAsync();
         }
     }
 }

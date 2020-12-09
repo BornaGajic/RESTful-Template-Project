@@ -5,27 +5,31 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Supermarket.API.Service.Common;
-using Supermarket.API.Model;
 using System.Threading.Tasks;
+using Supermarket.API.Model.CategoryDomainModels;
+using Supermarket.API.RestModels;
+using AutoMapper;
 
 namespace Supermarket.API.Controllers
 {
-    public class CategoriesController : ApiController
+	public class CategoriesController : ApiController
     {
-        private readonly ICategoryService _categoryService;
+        public ICategoryService CategoryService { get; set; }
+        public IMapper Mapper { get; set; }
 
-        public CategoriesController (ICategoryService categoryService)
+        public CategoriesController (ICategoryService categoryService, IMapper mapper)
         {
-            _categoryService = categoryService;
+            CategoryService = categoryService;
+            Mapper = mapper;
         }
 
         [HttpGet]
         [Route("api/CategoriesController/all")]
-        public async Task<IEnumerable<Category>> GetAllAsync ()
+        public async Task<IEnumerable<CategoryRestModel>> GetAllAsync ()
         {
-            var categories = await _categoryService.ListAsync();
+            var categoriesDomainmodel = await CategoryService.ListAsync();
 
-            return categories;
+            return Mapper.Map<IEnumerable<CategoryRestModel>>(categoriesDomainmodel);
         }
     }
 }

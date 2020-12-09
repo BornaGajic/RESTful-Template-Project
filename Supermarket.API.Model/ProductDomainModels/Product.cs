@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Supermarket.API.Model.CategoryDomainModels;
+using Supermarket.Common;
 
-namespace Supermarket.API.Model
+namespace Supermarket.API.Model.ProductDomainModels
 {
 	public class Product
 	{
@@ -11,8 +13,5 @@ namespace Supermarket.API.Model
 		public string Name { get; set; }
 		public short QuantityInPackage { get; set; }
 		public EUnitOfMeasurement UnitOfMeasurement { get; set; }
-
-		public int CategoryId { get; set; }
-		public Category Category { get; set; }
 	}
 }

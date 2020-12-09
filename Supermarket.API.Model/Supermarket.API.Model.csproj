@@ -78,14 +78,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
-    <Compile Include="EUnitOfMeasurement.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="CategoryDomainModels\Category.cs" />
+    <Compile Include="ProductDomainModels\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Supermarket.API.Model.Common\Supermarket.API.Model.Common.csproj">
+      <Project>{441b11f6-6f67-4f48-869d-fab1c462f8a1}</Project>
+      <Name>Supermarket.API.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Supermarket.Common\Supermarket.Common.csproj">
+      <Project>{fe652ea2-dab2-4a77-a3f0-a58a0feec542}</Project>
+      <Name>Supermarket.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
