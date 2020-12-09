@@ -12,8 +12,9 @@ namespace Supermarket.API.Repository.Common
 	{
 		ICategoryRepository CategoryRepository { get; set; }
 
-		Task<int> CommitAsync();
-
 		Task<int> AddAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
+		Task<int> UpdateAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
+		Task<int> DeleteAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
+		Task<int> CommitAsync<TEntity> (TEntity entity) where TEntity : BaseEntity;
 	}
 }

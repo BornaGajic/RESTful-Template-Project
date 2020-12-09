@@ -7,6 +7,7 @@ using Supermarket.API.Repository.Common;
 using Supermarket.API.Repository.Common.Repositories;
 using Supermarket.DAL;
 using Supermarket.DAL.Context;
+using System.Data.Entity;
 
 namespace Supermarket.API.Repository
 {
@@ -24,12 +25,28 @@ namespace Supermarket.API.Repository
 
 		public virtual Task<int> AddAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
 		{
-			return default;
+			DbContext.Entry(entity).State = EntityState.Added;
+			
+			return Task.FromResult(1);
 		}
 
-		public async Task<int> CommitAsync ()
+		public virtual Task<int> UpdateAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
 		{
-			throw new NotImplementedException();
+			DbContext.Entry(entity).State = EntityState.Modified;
+
+			return Task.FromResult(1);
+		}
+
+		public virtual Task<int> DeleteAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
+		{
+			DbContext.Entry(entity).State = EntityState.Deleted;
+
+			return Task.FromResult(1);
+		}
+
+		public Task<int> CommitAsync<TEntity> (TEntity entity) where TEntity : BaseEntity
+		{
+			return DbContext.SaveChangesAsync();
 		}
 
 		public void Dispose ()

@@ -36,6 +36,13 @@ namespace Supermarket.API.Repository
 			return await Entities.FindAsync(id);
 		}
 
+		public async virtual Task<IEnumerable<TEntity>> ExecuteQuery (TEntity entity, string sqlQuery)
+		{
+			var listifiedResult = await Task.Run(() => {return Entities.SqlQuery(sqlQuery).ToList();}); 
+
+			return listifiedResult;
+		}
+
 		public virtual IQueryable<TEntity> Table => Entities;
 		public virtual IQueryable<TEntity> TableAsNoTracking => Entities.AsNoTracking();
 		
